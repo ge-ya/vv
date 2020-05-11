@@ -1,0 +1,252 @@
+* {
+    margin:0px;
+    border:0px;
+    padding:0px;
+}
+html{     
+width:100%;    
+overflow-x:hidden;
+}
+.clear{clear:both;}
+body{
+    margin: 0;
+    padding: 0;
+ background:rgb(255, 229, 204,0.3);
+  }
+  a{
+    text-decoration: none;
+  }
+.hr0{ 
+  height:1px;
+  border:none;
+  border-top:1px solid #C0C0C0;
+  width: 100%;
+  top:-10px;
+}
+.form{
+    width: 500px;
+    height: 600px;
+    margin: 20px auto;
+}
+.form_register,.form_login{
+    width: 500px;
+    background-color:rgba(255,255,255, 0.7);
+    border-radius: 5px;
+    box-shadow: 0 0 3px #ccc;  
+    overflow: hidden;
+    transition: height 1s;
+}
+.form_register{
+    height: 548px;
+}
+
+.form form{
+   padding: 25px 40px;
+}
+.form .form_item{
+    display: flex;
+    margin: 25px 0;
+    vertical-align: middle;
+}
+.form input{
+    outline: none;
+    text-indent: 10px;
+    flex: 1;
+    width: auto;
+    border: none;
+    border-radius: 3px;
+    height: 36px;
+}
+.form form label{
+    width: 90px;
+    float: left;
+    line-height: 36px;
+}
+h1{
+    text-align:center;
+    padding: 0;;
+    margin: 30px 0 30px 0;
+}
+.form form input[type='submit']{
+    background-color: rgba(244, 22, 7, 0.7);
+    color: aliceblue;
+    height: 45px;
+    font-size: 20px;
+    cursor:pointer;
+    margin-top: 20px;
+}
+.form .info{
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.form .info span{
+    color: crimson;
+    margin-left: 3px;
+}
+.form .info span:hover{
+    cursor: pointer;
+    border-bottom: 1px solid crimson;
+    
+}
+/*头部*/
+#banner{
+    width: 100%;
+    height: 100px;
+    padding: 0;
+    margin:0;
+    }
+
+
+.headersection {
+    float: left;
+    width: 200px;
+    height: 100px;
+    padding: 10px 0 10px 30px;
+}
+.headersection img{
+  width:400px;
+  height:400px;
+  float:left;
+   margin-left:-100px;
+  margin-top:-160px;
+}
+#aboutco{
+  float: right;
+  width:350px;
+  padding: 5px 10px 20px 0;
+   font-family: 'Microsoft YaHei';
+   font-size: 14px;
+   margin-left:350px;
+ 
+  margin-top:10px;
+    }
+#aboutco form {
+  height: 40px;
+  width: 330px;
+  padding:0;
+  margin: 0px;
+   border-style:solid;
+  border-color:#B0C4DE;
+  border-width: 2px;
+  border-radius:0.25em;
+
+}
+
+.textfield {
+  float: left;
+  height: 40px;
+  width:290px;
+  background-color: #FFF;
+  border-radius:0.25em;
+
+} 
+.button {
+background-color: #B0C4DE;
+  float: left;
+  display: block;
+  width: 40px;
+  height:40px;
+  text-align: center;
+  background-image: url(../img/search.png);
+   background-repeat: no-repeat;
+  background-size: 30px;
+  background-position:center;
+}
+.hotp{ 
+  font-weight:bold; 
+  color:#999999; 
+  padding-top:10px; 
+  text-align:left;
+}
+.hotp a{ 
+  font-weight:normal;
+text-decoration:none;
+}
+.hotp a:link, a:visited{
+color:#999999;
+}
+.hotp a:hover, a:active{
+  color:#5AA628;
+}
+.iii{
+ margin-top:-25px;
+}
+/*伪导航*/
+.weidao{
+  width: 100%;
+  height: 25px;
+  color:#737373;
+  left: 10px;
+ }
+.weidao pre{
+  text-align: left;
+   font-weight: normal;
+    font-size: 16px;
+    color:#737373;
+   font-family:"方正粗黑宋简体";
+}
+.weidao pre a:link, pre a:visited {
+  color:#737373;
+}
+.weidao a:hover, a:active{
+color:#5AA628;
+}
+/*底部*/
+#footer {
+  clear: both;
+  width: 100%;
+  height:150px;
+   background: #d9d9d9;
+  border-top: 4px solid #bfbfbf;
+  margin-bottom: -30px;  
+}
+#footer p{
+   text-align: center;
+  line-height: 18px;
+}
+#footer a{
+  color:#737373;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 13px;
+}
+
+#footer a:hover{
+  color: #FFF;
+}
+/*返回顶部*/
+  .arrow{
+        border: 9px solid transparent;
+        border-bottom-color:none;
+        width: 0px;
+        height: 0px;
+        top:0px
+    }
+    .stick{
+        width: 8px;
+        height: 14px;
+        border-radius: 1px;
+        background-color:none;
+        top:15px;
+    }
+    #back_top div{
+        position: absolute;
+        margin: auto;
+        right: 0px;
+        left: 0px;
+    }
+    #back_top{
+         background-image: url(../img/ding.png);
+   background-repeat: no-repeat;
+  background-size:35px;
+  background-position:center;height: 38px;
+        width: 38px;
+        border-radius: 3px;
+        display: block;
+        cursor: pointer;
+        position: fixed;
+        right: 50px;
+        bottom: 100px;
+        display: none;
+    }

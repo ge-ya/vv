@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录注册</title>	
+    <link rel="stylesheet" href="../css/style.css">	
+    <script src="../js/form.js"></script>
+    <link type="text/css" href="../css/index.css" rel="stylesheet">
+<script type="text/javascript" src="../js/jquery1.42.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    function anim(duration){
+        $('#mint').animate(
+            {height: 'toggle'},
+            {duration: duration}
+        );
+    }
+    $('#closebtn').click(function() {
+        $('#mintbar').slideUp();
+        anim(600);
+    });
+   
+    $('#mint').click(function() {
+        anim(600);
+        $('#mintbar').slideDown('slow');
+    });
+    
+});
+</script>
+
+   
+</head>
+<body>
+<div id="banner">
+
+      <div class="headersection">
+        <img src="../img/logo.png" alt="">
+      </div>
+
+<table>
+<tr><td>
+<div id="aboutco">
+<form method="post" action="#/">
+<input class="textfield" name="search" type="text" placeholder="在这里搜索…">
+<input class="button" type="submit" name="submit" value="">
+</form>
+ <p class="hotp">热门收索：
+                <a href="#/">当代艺术</a>
+                <a href="#/">油画</a>
+                <a href="#/">拍卖</a>
+                <a href="#/">收藏</a>
+                <a href="#/">版画</a>
+                <a href="#/">国画</a>
+            </p></div></td>
+            <td>
+            <div id="mintbar"><a id="closebtn" href="#"><img src="../img/wd02.png" /></a></div>
+           </td></tr>
+</table>
+
+            <div class="top2">
+<div id="mint" style="display:none;position:absolute;top:0;right:0px;">
+    <div class="box-nav-bj"><img style="right:0px; top:0px;" src="../img/wd06.png" /></div>
+    <div class="box-nav">
+        <li><a href="shouye.html">首页</a></li>
+        <li><a href="mingjia.html">名家访谈</a></li>
+        <li><a href="shangwan.html">书画赏玩</a></li>
+        <li><a href="shangcheng.html">书画商城</a></li>
+        <li><a href="guanyu.html">关于我们</a></li>
+        <li><a href="lianxiwomen.html">在线留言</a></li>
+    </div>
+    <img src="../img/wd07.png" alt="丝带"/>
+ 
+</div>
+</div>
+</div><br><br>
+<!--伪导航-->
+<div class="weidao">
+<pre>当前位置：<a href="shouye.html">首页</a>>><a href="#/">书画商城</a></pre>
+</div><br>
+<hr class="hr0" />
+<br><br>
+    <div class="form" style="position:relative">
+		<!--注册表单-->
+        <div class="form_register" style="position:absolute">  
+            <form action="#">
+                <h1>您正在注册“飞云系”账号</h1>
+                <div class="form_item">
+                    <label for="username">用户名：</label>
+                    <input type="text" name="username" id="username" placeholder="请输入用户名" required >
+                </div>
+                <div class="form_item">
+                    <label for="password">密码：</label>
+                    <input type="password" name="password" id="password" placeholder="请输入密码名" required>
+                </div>
+                <div class="form_item">
+                    <label for="email">电子邮箱：</label>
+                    <input type="email" name="email" id="email" placeholder="请输入电子邮件" required>
+                </div>
+                <div class="form_item">
+                    <label for="tel">电话：</label>
+                    <input type="tel" name="tel" id="tel" placeholder="请输入手机号码" required>
+                </div>
+                <div class="form_item">
+                    <input type="submit" value="注册">
+                </div>
+            </form>
+            <div class="info">已有账号？点击<span class="switch login_Btn">登录</span></div>
+        </div>
+		
+		<!--登录表单-->
+        <div class="form_login" style="height:0;">
+			
+			<form action="#">
+				<h1>您正在登录“飞云系”账号</h1>
+				<div class="form_item">
+					<label for="username">用户名：</label>
+					<input type="text" name="username" id="username" placeholder="请输入用户名" required>
+				</div>
+				<div class="form_item">
+					<label for="password">密码：</label>
+					<input type="password" name="password" id="password" placeholder="请输入密码名" required>
+				</div>
+				<div class="form_item">
+					<input type="submit" value="登录">
+				</div>
+			</form>
+			<div class="info">没有账号？点击<span class="switch register_Btn">注册账号</span></div>
+			
+         </div>
+        
+    </div>
+    <!--底部-->
+     <div id="footer">
+ <br><br>
+  <p><a href="shouye.html">首页</a>&nbsp;&nbsp;<a href=".html">关于我们</a>&nbsp;&nbsp;<a href=".html">联系我们</a> &nbsp;&nbsp;<a href=".html">招聘信息</a>&nbsp;&nbsp;<a href="#/">收藏本站</a></p>
+  <p><a href="#/">飞云系主编信箱：flyingcloud@fyx.com 电话：222-198804160</a></p>
+     <p><a href="#/">
+网络文化经营许可证号：京文网【2020】0416-044号 京ICP备61408891号 京公网安备20200416002020</a></p>
+<p><a href="#/">版权所有：FlyingCloud 2019-2020 飞云系网络文化有限公司</a></p><br>
+</div>
+</div>
+<!--返回顶部-->
+   <div id="article"></div>
+<div id="back_top">
+<div class="arrow"></div>
+<div class="stick"></div>
+</div>
+<script src="../js/top.js"></script>
+<script>
+$(function(){
+    for(var i =0 ;i <100;i++){
+        $("#article").append("")
+    }
+
+})
+</script>
+<script>
+$(function(){
+
+    $(window).scroll(function(){  //只要窗口滚动,就触发下面代码
+
+        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+
+        if( scrollt >200 ){  //判断滚动后高度超过200px,就显示
+
+            $("#back_top").fadeIn(400); //淡入
+
+        }else{
+
+            $("#back_top").stop().fadeOut(400); //如果返回或者没有超过,就淡出.必须加上stop()停止之前动画,否则会出现闪动
+
+        }
+
+    });
+
+    $("#back_top").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+
+        $("html,body").animate({scrollTop:"0px"},200);
+
+    }); 
+
+});
+</script>
+</body>
+</html>

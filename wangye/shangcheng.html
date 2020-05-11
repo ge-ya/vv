@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>*网页通栏及中间版心的设计</title>
+	<link rel="stylesheet" href="../css/mydemo2.css">
+	<link rel="stylesheet" type="text/css" href="../css/shangcheng.css">
+	  <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+     <style>
+    .swiper-container {
+        width: 1050px;
+        height: 450px;
+        left:100px;
+        top: -450px;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background:rgb(255, 229, 204,0.22);
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    /* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.popup1{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left:120px;
+    top:-35px;
+}
+.popup2 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left:190px;
+    top:-67px;
+}
+.popup3 {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin-left:260px;
+    top:-99px;
+}
+/* The actual popup */
+.popup .popuptext{
+    visibility: hidden;
+    width:90px;
+    background-color: #66ccff;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+   bottom: 155%;
+    left: 50%;
+   margin-left: -150px;
+  }
+.popup1 .popuptext1{
+    visibility: hidden;
+    width:110px;
+    background-color: #66ccff;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+   margin-left: -150px;
+  }
+  .popup2 .popuptext2{
+    visibility: hidden;
+    width:130px;
+    background-color: #66ccff;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    bottom: 105%;
+    left: 50%;
+   margin-left:-160px;
+  }
+  .popup3 .popuptext3{
+    visibility: hidden;
+    width:120px;
+    background-color: #66ccff;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding:0;
+    position: absolute;
+    z-index: 1;
+    bottom: 115%;
+    left: 50%;
+   margin-left:-120px;
+  }
+/* Popup arrow */
+.popup .popuptext::after,.popup1 .popuptext1::after,.popup2 .popuptext2::after,.popup3 .popuptext3::after {
+    content: "";
+    top:100%;
+    left: 50%;
+    position: absolute;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #66ccff transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show,.popup1 .show1,.popup2 .show2,.popup3 .show3  {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+</style>
+</head>
+<body>
+<!--top层-->
+	<div id="contain">
+<div id="banner">
+      <div class="headersection"><table>
+     <tr><td>
+        <img src="../img/logo.png" alt="" width="350px"></td>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td>
+        <img src="../img/111.gif" width="220px" >
+        </td>
+     
+</table>
+ </div>
+<div id="aboutco">
+
+<form method="post" action="#/">
+<input class="textfield" name="search" type="text" placeholder="在这里搜索…">
+<input class="button" type="submit" name="submit" value="">
+</form>
+ <p class="hotp">热门商品：
+                <a href="#/">装饰画</a>
+                <a href="#/">山水画</a>
+                <a href="#/">玄关装饰画</a>
+                <a href="#/">挂画</a>
+                <a href="#/">中国结</a>
+            </p>
+            <div class="login-box">
+<a href="denglu.html">
+<img src="../img/denglu.png" width="8%">
+</a>&nbsp;
+<a href="#/" class="popup" onclick="myFunction()"><img src="../img/xiaoxi.png" width="14%">(0)<span class="popuptext" id="myPopup">您还没有消息!</span></a>
+<a href="#/" class="popup1" onclick="myFunction1()"><img src="../img/che.png" width="14%">(0)<span class="popuptext1" id="myPopup1">购物车竟然是空的，快去逛逛吧!</span></a>
+<a href="#/" class="popup2" onclick="myFunction2()"><img src="../img/shoucang.png" width="14%">(0)<span class="popuptext2" id="myPopup2">您还没有收藏，快把喜欢的收藏起来吧!</span></a>
+<a href="#/" class="popup3" onclick="myFunction3()"><img src="../img/shangcheng.png" width="25%"><span class="popuptext3" id="myPopup3">您已经在商城里啦，快去逛逛吧!</span></a>
+<script type="text/javascript">
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+function myFunction1() {
+    var popup = document.getElementById("myPopup1");
+    popup.classList.toggle("show1");
+}
+function myFunction2() {
+    var popup = document.getElementById("myPopup2");
+    popup.classList.toggle("show2");
+}
+function myFunction3() {
+    var popup = document.getElementById("myPopup3");
+    popup.classList.toggle("show3");
+}
+</script>
+</div>
+</div>
+<div style="clear:both;"></div>
+</div>
+</div>
+<!--伪导航-->
+<div class="weidao">
+<pre>当前位置：<a href="shouye.html">首页</a>>><a href="#/">书画商城</a></pre>
+</div>
+<hr class="hr0" />
+
+<!--导航+轮播图-->
+<div class="banner">
+<!--左nav层-->
+<div class="asidedao">
+<ul style="font-size: 20px; width: 200px;">
+  <li style=" text-align: center;height: 73px;
+    background-color:#404040;"><br><a href="shouye.html" style="font-weight: bold;color: #FFFFFF;">首页</a></li>
+  <li style=" text-align: center;
+    height: 73px;
+    background-color:#4d4d4d;"><br><a href="mingjia.html" style="font-weight: bold;color: #FFFFFF;">名家访谈</a></li>
+  <li style=" text-align: center;
+    height: 73px;
+    background-color:#404040;"><br><a href="shangwan.html" style="font-weight: bold;color: #FFFFFF;">书画赏玩</a></li>
+  <li style=" text-align: center;
+    height: 73px;
+    background-color:#4d4d4d;"><br><a href="shangcheng.html" style="font-weight: bold;color: #FFFFFF;">书画商城</a></li>
+  <li style=" text-align: center;
+    height: 73px;
+    background-color:#404040;"><br><a href="guanyu.html" style="font-weight: bold;color: #FFFFFF;">关于我们</a></li>
+  <li style=" text-align: center;
+    height: 73px;
+    background-color:#4d4d4d;"><br><a href="lianxiwomen.html" style="font-weight: bold;color: #FFFFFF;">在线留言</a></li>
+</ul>
+</div>
+<!--轮播图--> 
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../img/qq1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../img/qq2.png" alt=""></div>
+            <div class="swiper-slide"><img src="../img/qq3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="../img/qq4.jpg" alt=""></div>
+            </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+ <!-- Swiper JS -->
+    <script src="../js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+    <!--第一层图片-->
+    <div class="fong">
+     <div class="ite"><a href=""><img src="../img/qq5.png" alt="01"></a></div>
+<div class="ite"><a href=""><img src="../img/qq6.jpg" alt="02"></a></div>
+<div class="ite"><a href=""><img src="../img/qq7.jpg" alt="03"></a></div>
+<div class="ite"><a href=""><img src="../img/qq8.jpg" alt="04"></a></div>
+     </div>
+<!--content图片层-->
+<div class="photowall">
+<ul class="polaroids">
+            <li><a href="#"><img src="../img/shanshui1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/shanshui3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/shanshui4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/shanshui2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/zhongshi2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/zhongshi1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/zhongshi31.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/zhongshi4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/minzu1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/minzu2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/minzu3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/minzu4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/tianyuan1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/tianyuan2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/tianyuan3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/tianyuan4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/zhongshi5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="../img/hua.jpg" alt=""></a></li>
+        </ul>
+</div>
+<!--图文信息层-->
+<div class="content">
+<ul>
+	<li><a href=""><img src="../img/xqq1.webp" alt=""><br>吴湖帆烟霏瑶台山水画中国画名画复制……<br><span>￥<em>20.70</em></span></a></li>
+	<li><a href=""><img src="../img/xqq2.webp" alt=""><br>
+	新中式装饰画客厅沙发背景墙装饰画水……<br><span>￥<em>277.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq3.webp" alt=""><br>
+	旭日东升中国画山水挂画办公室装饰壁……<br><span>￥<em>148.00-336.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq4.webp" alt=""><br>
+	魏紫熙黄山翠峦山水画中国画名画复制……<br><span>￥<em>19.44-108.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq5.webp" alt=""><br>
+	仿齐白石国画虾手绘真迹客厅装饰画……<br><span>￥<em>15.90-369.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq6.webp" alt=""><br>
+	新中式玄关竖版走廊装饰墙面过道山水……<br><span>￥<em>298.00-2376.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq7.webp" alt=""><br>
+	新中式玄关装饰画抽象客厅背景墙壁画……<br><span>￥<em>216.00-496.00</em></span></a></li>
+	<li><a href=""><img src="../img/xqq8.webp" alt=""><br>
+	逸云新中式玉雕画挂画客厅玄关装饰画……<br><span>￥<em>839.00-1360.00</em></span></a></li>
+    <li><a href=""><img src="../img/xqq9.webp" alt=""><br>
+    新中式挂画玄关装饰画中国风水墨背景……<br><span>￥<em>336.00-972.00</em></span></a></li>
+    <li><a href=""><img src="../img/xqq10.webp" alt=""><br>
+    中国风现代简约沙发背景墙壁挂画工笔……<br><span>￥<em>376.00-3304.00</em></span></a></li>
+    <li><a href=""><img src="../img/xqq11.webp" alt=""><br>
+    宋徽宗听琴图仿古画复制客厅书房玄关……<br><span>￥<em>68.00-75.00</em></span></a></li>
+    <li><a href=""><img src="../img/xqq12.webp" alt=""><br>
+    蜀山行旅 30x63厘米 中国画<br><span>￥<em>17.00</em></span></a></li>
+</ul>
+</div><br><br><br><br>
+<!--结束-->
+ <div class="ourShop">
+    <ul class="ourShopBrand clearfix">
+            <li>
+                    <ul class="clearfix">
+                            <li><img src="../img/di1.png" alt="正品保证"></li>
+                            <li>
+                                    <p class="ourShopTitle1">正品保证</p>
+                                    <p class="ourShopTitle2">正品保障 提供发票</p>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <ul class="clearfix">
+                            <li><img src="../img/di2.png" alt="保险承保"></li>
+                            <li>
+                                    <p class="ourShopTitle1">保险承保</p>
+                                    <p class="ourShopTitle2">全场投保 放心购买</p>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <ul class="clearfix">
+                            <li><img src="../img/di3.png" alt="安全送达"></li>
+                            <li>
+                                    <p class="ourShopTitle1">全国包邮</p>
+                                    <p class="ourShopTitle2">品牌物流 安全送达</p>
+                            </li>
+                    </ul>
+            </li>
+            <li>
+                    <ul class="clearfix">
+                            <li><img src="../img/di4.png" alt="无忧售后"></li>
+                            <li>
+                                    <p class="ourShopTitle1">无忧售后</p>
+                                    <p class="ourShopTitle2">7天无理由退换货</p>
+                            </li>
+                    </ul>
+            </li>
+
+            <li>
+                    <ul class="clearfix">
+                            <li><img src="../img/di5.png" alt=""></li>
+                            <li>
+                                    <p class="ourShopTitle1">保值回购</p>
+                                    <p class="ourShopTitle2">保值增值 随时变现</p>
+                            </li>
+                    </ul>
+            </li>
+    </ul>
+</div>
+
+<div style="background-color:rgb(255, 255, 229,0.4);">
+ <!--底部-->
+ <div class= "container" style="width:100%; color: #000;font-size: 15px;">
+<div class="row">
+<div class="col-md-9 col-md-push-3">
+<br>
+    <div class="row">
+    <div class="col-md-4" style="width: 120px;">
+   
+    <p>购买艺术<br>购买流程<br>服务协议<br>配送说明<br>支付方式</p>
+    </div>
+     <div class="col-md-4" style="width: 120px;">
+<p>特色服务<br>保值服务<br>保险承担<br>私人订制</p>
+    </div>
+    <div class="col-md-4" style="width: 120px;">
+<p>无忧售后<br>退换货说明<br>退款说明<br>快递查询<br>服务保障</p>
+    </div>
+   
+   <div class="col-md-4" style="width: 120px;">
+<p>关于我们<br>公司简历<br>工作机会<br>友情链接</p>
+    </div>
+    </div>
+    </div>
+<div class="col-md-3 col-md-pull-9 hidden-md">
+    </div>
+    </div>
+    </div>
+    <hr class="hr1" />
+<!--最底部-->
+     <div id="footer">
+ <br><br>
+  <p><a href="#/">飞云系主编信箱：flyingcloud@fyx.com 电话：222-198804160</a></p>   
+<p><a href="#/">版权所有：FlyingCloud 2019-2020 飞云系网络文化有限公司</a></p>
+<p><a href="#/">
+网络文化经营许可证号：京文网【2020】0416-044号 京ICP备61408891号 京公网安备20200416002020</a></p>
+<br>
+</div>
+</div></div>
+ <!--返回顶部-->
+   <div id="article"></div>
+<div id="back_top">
+<div class="arrow"></div>
+<div class="stick"></div>
+</div>
+<script src="../js/top.js"></script>
+<script>
+$(function(){
+    for(var i =0 ;i <100;i++){
+        $("#article").append("")
+    }
+
+})
+</script>
+<script>
+$(function(){
+
+    $(window).scroll(function(){  //只要窗口滚动,就触发下面代码
+
+        var scrollt = document.documentElement.scrollTop + document.body.scrollTop; //获取滚动后的高度
+
+        if( scrollt >200 ){  //判断滚动后高度超过200px,就显示
+
+            $("#back_top").fadeIn(400); //淡入
+
+        }else{
+
+            $("#back_top").stop().fadeOut(400); //如果返回或者没有超过,就淡出.必须加上stop()停止之前动画,否则会出现闪动
+
+        }
+
+    });
+
+    $("#back_top").click(function(){ //当点击标签的时候,使用animate在200毫秒的时间内,滚到顶部
+
+        $("html,body").animate({scrollTop:"0px"},200);
+
+    }); 
+
+});
+</script>
+</body>
+</html>
